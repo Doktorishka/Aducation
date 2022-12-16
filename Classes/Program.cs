@@ -8,10 +8,12 @@ namespace Classes
 {
     internal class Program
     {
+        int a = 0;
         // объкет -> класс(экземпляр объекта) -> переменная (экземпляр класса)
 
-        static void Main(string[] args)
+        static void Main(string[] args)// "Name", "Age"
         {
+
             People p = new People();
 
             p.name = "Test";
@@ -41,6 +43,109 @@ namespace Classes
             Console.ReadKey();
         }
 
+        /*
+         * ЗАДАЧА ПО ТЕМЕ КЛАССЫ
+         * 
+            Создать класс Прямоугольник с параметрами длина, ширина, площадь, периметр
+            в классе создать два метода (1. Расчет площади, вернуть в класс.площадь, 2. Расчет периметра, вернуть класс.периметр), два конструктора, пустой и с двумя параметрами(длина, ширина)
+            
+
+            Pryamoygolnik p = new Pryamoygolnik();
+            Pryamoygolnik p2 = new Pryamoygolnik(10,15);
+
+            p.height = 20;
+            p.weight = 6;
+
+            p.getArea();
+            p.getPerimetr();
+            p2.getArea();
+            p2.getPerimetr();
+
+            Console.WriteLine(p.area, p.perimetr, p2.area, p2.perimetr);
+
+            * создать деконструкор(не деструктор ~) площади и периметра (void Deconstructor(out int area, out int perimetr))
+            Console.WriteLine(area1, perimetr1, area2, perimetr2);
+         */
+
+        // ТЕМА 2 - МОДИФИКАТОРЫ ДОСТУПА
+
+        /*
+         *  public - общедоступный, доступен вне класса вне сборки
+         *  private - закрытый или приватный компонент класса или структуры. Приватный компонент доступен только в рамках своего класса или структуры.
+         *  protected - такой компонент класса доступен из любого места в своем классе или в производных классах. При этом производные классы могут располагаться в других сборках.
+         *  private protected - компонент класса доступен из любого места в своем классе или в производных классах, которые определены в той же сборке.
+         *  internal -  компоненты класса или структуры доступен из любого места кода в той же сборке, однако он недоступен для других программ и сборок.
+         *  protected internal -  совмещает функционал двух модификаторов protected и internal. Такой компонент класса доступен из любого места в текущей сборке и из производных классов, которые могут располагаться в других сборках.
+         *  
+         */
+
+
+        
+    }
+
+    class Stage// internal
+    {
+        //идентично private string 
+        string defaultString = "default";
+        //поле доступно исключительно внутри текущего класса
+        private string privateString = "private";
+        //поле доступно внутри текущего и внутри производного класса текущей сборки
+        protected private string privateProtectedString = "protected private";
+        //поле доступно внутри текущего и внутри производного класса
+        protected string protectedString = "protected";
+        // доступно в любом месте текущего проекта
+        internal string internalString = "internal";
+        // доступно в любом месте текущего проекта
+        protected internal string protectedInternalString = "protected internal";
+        //доступно в любом месте текущей программы, в любой сборке, в любой программе
+        public string publicString = "public";
+
+
+        //по умолчанию - private 
+        void Print() => Console.WriteLine(defaultString);
+        //метод доступен в текущем классе
+        private void PrintPrivate() => Console.WriteLine(privateString);
+        //доступен из текущего класса и производных классов, которые определены в этом же проекте
+        protected private void PrintProtectedPrivate() => Console.WriteLine(privateProtectedString);
+        // доступен из текущего класса и производных классов
+        protected void PrintProtected() => Console.WriteLine(protectedString);
+        // доступен в любом месте текущего проекта
+        internal void PrintInternal() => Console.WriteLine(internalString);
+        // доступно в любом месте текущего проекта
+        protected internal void PrintProtectedInternal() => Console.WriteLine(protectedInternalString);
+        //доступно в любом месте текущей программы, в любой сборке, в любой программе
+        public void PrintPublic() => Console.WriteLine(publicString);
+    }
+
+
+
+    class ConsumerStage
+    {
+
+        public void PrintStage()
+        {
+            Stage stage = new Stage();
+
+            Console.WriteLine(stage.defaultString);
+
+            Console.WriteLine(stage.privateString);
+
+            Console.WriteLine(stage.privateProtectedString);
+
+            Console.WriteLine(stage.protectedString);
+
+            Console.WriteLine(stage.internalString);
+
+            Console.WriteLine(stage.protectedInternalString);
+
+            Console.WriteLine(stage.publicString);
+
+            //stage.Print();
+
+            // --- то же самое что и с переменными ---
+
+
+        }
     }
 
 }

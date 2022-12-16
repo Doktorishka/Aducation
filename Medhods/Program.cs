@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using Classes_PART_1;
 
 namespace Methods
 {
@@ -15,7 +16,6 @@ namespace Methods
             // тело метода
             } 
         */
-
         //Метод без параметров, не возвращающий значения
         static void Hello()
         {

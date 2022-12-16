@@ -9,6 +9,7 @@ namespace Classes
     public class People
     {
         public int age;
+        private int age_old;
         public string name;
         public double weight;
         public double longer;
