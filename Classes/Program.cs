@@ -13,32 +13,52 @@ namespace Classes
 
         static void Main(string[] args)// "Name", "Age"
         {
+            #region Comment
+            //People p = new People();
 
-            People p = new People();
+            //p.name = "Test";
+            //p.age = 10;
+            //p.weight = 10;
+            //p.longer = 10;
 
-            p.name = "Test";
-            p.age = 10;
-            p.weight = 10;
-            p.longer = 10;
+            //People p2 = new People(27, "Igor", 50, 150);
 
-            People p2 = new People(27, "Igor", 50, 150);
+            ////(int age, string name) = p2;  Синтаксический сахар
 
-            //(int age, string name) = p2;  Синтаксический сахар
+            ////if(i < n) z ++;
+            ////  else z--;
 
-            //if(i < n) z ++;
-            //  else z--;
+            //int i = 3,  j = 4;
+            //int z = 0;
+            //z = (i < j) ? z++ : z--; // Синтаксический сахар условия if else (тернарная операция)
 
-            int i = 3,  j = 4;
-            int z = 0;
-            z = (i < j) ? z++ : z--; // Синтаксический сахар условия if else (тернарная операция)
+            //string name;
+            //int age;
 
-            string name;
-            int age;
+            //p2.Deconstruct(out age, out name);
 
-            p2.Deconstruct(out age, out name);
+            //Console.WriteLine(name);
+            //Console.WriteLine(age);
+            #endregion
 
-            Console.WriteLine(name);
-            Console.WriteLine(age);
+            double area1, perimetr1, area2, perimetr2;
+
+            Pryamoygolnik p = new Pryamoygolnik();
+            Pryamoygolnik p2 = new Pryamoygolnik(10, 15);
+
+            p.height = 20;
+            p.width = 6;
+
+            p.SetArea();
+            p.SetPerimetr();
+            p2.SetArea();
+            p2.SetPerimetr();
+
+            p.Deconstruct(out area1, out perimetr1);
+            p2.Deconstruct(out area2, out perimetr2);
+
+            Console.WriteLine($"Площадь 1-го прямоугольника:{area1}, Периметр первого прямоугольника:{perimetr1}");
+            Console.WriteLine($"Площадь 2-го прямоугольника:{area2}, Периметр 2-го прямоугольника:{perimetr2}");
 
             Console.ReadKey();
         }
@@ -99,6 +119,33 @@ namespace Classes
          *  
          */
     }
+
+    class Pryamoygolnik {
+        public double width;
+        public double height;
+        private double area;
+        private double perimetr;
+
+        public void SetPerimetr() {
+            this.perimetr = (width + height) * 2;
+        }
+
+        public void SetArea() {
+            this.area = width * height;
+        }
+
+        public Pryamoygolnik() { }
+        public Pryamoygolnik(double width, double height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        public void Deconstruct(out double area, out double perimetr) {
+            area = this.area;
+            perimetr = this.perimetr;
+        }
+    }
+
 
     class Stage// internal
     {
