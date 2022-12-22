@@ -54,6 +54,8 @@ namespace Classes
             p2.SetArea();
             p2.SetPerimetr();
 
+            double area = p.area;
+
             p.Deconstruct(out area1, out perimetr1);
             p2.Deconstruct(out area2, out perimetr2);
 
@@ -90,12 +92,13 @@ namespace Classes
         // ТЕМА 2 - МОДИФИКАТОРЫ ДОСТУПА
 
         /*
-         *  public - общедоступный, доступен вне класса вне сборки
+         *  
          *  private - закрытый или приватный компонент класса или структуры. Приватный компонент доступен только в рамках своего класса или структуры.
          *  protected - такой компонент класса доступен из любого места в своем классе или в производных классах. При этом производные классы могут располагаться в других сборках.
          *  private protected - компонент класса доступен из любого места в своем классе или в производных классах, которые определены в той же сборке.
          *  internal -  компоненты класса или структуры доступен из любого места кода в той же сборке, однако он недоступен для других программ и сборок.
          *  protected internal -  совмещает функционал двух модификаторов protected и internal. Такой компонент класса доступен из любого места в текущей сборке и из производных классов, которые могут располагаться в других сборках.
+         *  public - общедоступный, доступен вне класса вне сборки
          *  
          *  
          *  ЗАДАНИЕ 2
@@ -116,15 +119,20 @@ namespace Classes
          *  _______ <name_class> = new _______(input);
          *  
          *  <name_class>.Print();
-         *  
+         * 
+         * 
+         * Инкапсуляция = сокрытие
+         * 
+         * 
+         * 
          */
     }
 
     class Pryamoygolnik {
-        public double width;
-        public double height;
-        private double area;
-        private double perimetr;
+        public double width { get; set; } //{get; set} -- 
+        public double height { get; set; }
+        public double area { get; set; }
+        private double perimetr { get; set; }
 
         public void SetPerimetr() {
             this.perimetr = (width + height) * 2;
