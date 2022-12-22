@@ -4,7 +4,6 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
-using Classes_PART_1;
 
 namespace Methods
 {
@@ -90,6 +89,7 @@ namespace Methods
 
         static void Main(string[] args)
         {
+            #region Комментарии к теме
             // Факториал ! 10! = 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10
             // n! = 1 * 2 * … * n
 
@@ -217,7 +217,63 @@ namespace Methods
                 - Пушим
                 - Пишем в Whatsapp о завершении решения задач
          */
+
+            #endregion
+
+            double pi = 3.14f;
+            double radius = 3;
+            double square = CircleSquare(pi, radius);
+
+            double resultGetPow = GetPow(10, 3);
+
+            int max = 0, min = 0;
+            int[] numbers = { 1, 2, 3, 4, -3, -1, 0, 10, 13, -20 };
+
+            int pos = 0, nes = 0;
+
+            MinMaxSeq(numbers, out max, out min);
+            PosNesSeq(ref pos, ref nes, numbers);
+            //Console.WriteLine(square);
+            //Console.WriteLine(resultGetPow);
+
+            Console.WriteLine($"Минимальное: {min}, Максимальное: {max}");
+            Console.WriteLine($"Положительных: {pos}, Отрицательных: {nes}");
             Console.ReadLine();
         }
+
+
+        static double CircleSquare(double pi, double radius) { 
+            double square = pi * radius * radius;
+            return square;
+        }
+
+        static double GetPow(double x, double y) {
+            double result = 1;
+
+            for (int i = 1; i <= y; i++) {
+                result *= x;
+            }
+
+            return result;
+        }
+
+        static void MinMaxSeq(int[] numbers, out int max, out int min) {
+            max = 0;
+            min = Int32.MaxValue;
+
+            foreach(int i in numbers)
+            {
+                if (max < i) max = i;
+                if (min > i) min = i;
+            }
+        }
+
+        static void PosNesSeq(ref int pos, ref int nes, int[] ints) {
+            foreach (int num in ints) {
+                if (num > 0) pos++;
+                if (num < 0) nes++;
+            }
+        }
+
     }
 }

@@ -77,10 +77,27 @@ namespace Classes
          *  internal -  компоненты класса или структуры доступен из любого места кода в той же сборке, однако он недоступен для других программ и сборок.
          *  protected internal -  совмещает функционал двух модификаторов protected и internal. Такой компонент класса доступен из любого места в текущей сборке и из производных классов, которые могут располагаться в других сборках.
          *  
+         *  
+         *  ЗАДАНИЕ 2
+         *  
+         *  Создать класс _______ 
+         *  
+         *  Конструктор
+         *  ______(int input){
+         *      this.output = input;
+         *  }
+         *  
+         *  публичную переменную input
+         *  приватную переменную output
+         *  
+         *  публичный метод Print() => Console.WritLine(output);
+         *  
+         * Main -> Вызов метода 
+         *  _______ <name_class> = new _______(input);
+         *  
+         *  <name_class>.Print();
+         *  
          */
-
-
-        
     }
 
     class Stage// internal
@@ -126,13 +143,13 @@ namespace Classes
         {
             Stage stage = new Stage();
 
-            Console.WriteLine(stage.defaultString);
+            //Console.WriteLine(stage.defaultString);
 
-            Console.WriteLine(stage.privateString);
+            //Console.WriteLine(stage.privateString);
 
-            Console.WriteLine(stage.privateProtectedString);
+            //Console.WriteLine(stage.privateProtectedString);
 
-            Console.WriteLine(stage.protectedString);
+            //Console.WriteLine(stage.protectedString);
 
             Console.WriteLine(stage.internalString);
 
@@ -143,8 +160,6 @@ namespace Classes
             //stage.Print();
 
             // --- то же самое что и с переменными ---
-
-
         }
     }
 
