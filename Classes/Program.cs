@@ -128,6 +128,22 @@ namespace Classes
          */
     }
 
+
+    //Решение дз
+
+    class p
+    {
+        public int input;
+        private int output;
+
+        public p() { }
+        public p(int input) {
+            this.output = input;
+        }
+        public void Print() => Console.WriteLine(output);
+    }
+
+
     class Pryamoygolnik {
         public double width { get; set; } //{get; set} --   
         public double height { get; set; }
