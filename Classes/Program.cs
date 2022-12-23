@@ -129,7 +129,7 @@ namespace Classes
     }
 
     class Pryamoygolnik {
-        public double width { get; set; } //{get; set} -- 
+        public double width { get; set; } //{get; set} --   
         public double height { get; set; }
         public double area { get; set; }
         private double perimetr { get; set; }
