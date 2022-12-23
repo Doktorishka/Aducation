@@ -150,7 +150,6 @@ namespace Classes
 
         public void Deconstruct(out double area, out double perimetr) {
             area = this.area;
-            perimetr = this.perimetr;
         }
     }
 
