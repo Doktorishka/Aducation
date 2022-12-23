@@ -138,9 +138,11 @@ namespace Classes
 
         public p() { }
         public p(int input) {
-            this.output = input;
+            this.input = input;
         }
         public void Print() => Console.WriteLine(output);
+
+
     }
 
 
