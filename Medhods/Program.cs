@@ -192,6 +192,7 @@ namespace Methods
             2) Создать функцию MinmaxSeq(), которая принимает массив целочисленных аргументов.
            Метод должна выполнять поиск максимального и минимального значения последовательности и возвращать результат.
             Указания идентичны первой задаче. Вывести в консоль результат
+            
 
 
             3) Создать функцию PosNesSeq(ref int counPos, ref int countNes, params int[] ints), которая принимает массив целочисленных чисел ПО ССЫЛКЕ.
@@ -219,8 +220,46 @@ namespace Methods
          */
 
             #endregion
-           
+
+            Console.WriteLine(GetPow(2, 4));
+            int[] ints = { -3, 4, 5, 10, 101, -101, 102, 15, -15, 0 };
+            MinMaxPos(ints);
+            PosNes(ints);
             Console.ReadLine();
+
+            
         }
+
+
+        public static int GetPow(int num, int pow) {
+            int result = 1;
+            for (int i = 1; i <= pow; i++) result *= num;
+            return result;
+        }
+
+        public static void MinMaxPos(int[] ints) {
+            int max = 0;
+            int min = Int32.MaxValue;
+
+            for (int i = 0; i < ints.Length; i++) { 
+                if(max < ints[i]) max = ints[i];
+                if(min > ints[i]) min = ints[i];
+            }
+            Console.WriteLine($"Минимальное число в массиве: {min}, Максимальное число в массиве: {max}");
+        }
+
+        public static void PosNes(int[] ints)
+        {
+            int nes = 0;
+            int pos = 0;
+
+            for (int i = 0; i < ints.Length; i++)
+            {
+                if (ints[i] < 0) nes++;
+                if (ints[i] > 0) pos++;
+            }
+            Console.WriteLine($"Количество отрцательых чисел в массиве: {nes},\n Количество положительных чисел в массиве: {pos}");
+        }
+
     }
 }
