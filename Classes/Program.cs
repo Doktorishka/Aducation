@@ -51,11 +51,12 @@ namespace Classes
 
             p.SetArea();
             p.SetPerimetr();
-            p2.SetArea();
-            p2.SetPerimetr();
+
+            //p2.SetArea();
+            //p2.SetPerimetr();
 
             double area = p.area;
-
+            //Вспоминай свинью-копилку и молоток
             p.Deconstruct(out area1, out perimetr1);
             p2.Deconstruct(out area2, out perimetr2);
 
@@ -63,6 +64,7 @@ namespace Classes
             Console.WriteLine($"Площадь 2-го прямоугольника:{area2}, Периметр 2-го прямоугольника:{perimetr2}");
 
             Console.ReadKey();
+
         }
 
         /*
@@ -146,10 +148,13 @@ namespace Classes
         public Pryamoygolnik(double width, double height) {
             this.width = width;
             this.height = height;
+            this.perimetr = (width + height) * 2;
+            this.area = width * height;
         }
 
         public void Deconstruct(out double area, out double perimetr) {
             area = this.area;
+            perimetr = this.perimetr;
         }
     }
 

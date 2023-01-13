@@ -225,9 +225,7 @@ namespace Methods
             int[] ints = { -3, 4, 5, 10, 101, -101, 102, 15, -15, 0 };
             MinMaxPos(ints);
             PosNes(ints);
-            Console.ReadLine();
-
-            
+            Console.ReadLine(); 
         }
 
 
