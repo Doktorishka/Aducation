@@ -40,6 +40,10 @@ namespace Classes_PART2
             }
         }
 
+        class Evolution { 
+            bool isPeticantrop { get; set; }
+        }
+
         class Dog : Animal {
             
             public bool hvost { get; set; }
@@ -59,5 +63,38 @@ namespace Classes_PART2
         class Corgi : Dog {
             int ushi { get; set; }
         }
+
+
+        sealed class User {
+            public static string loginUser = "123";
+            public static string passwordUser = "123";
+        }
+
+        //class IMUser : User {
+        //    private string login { get; set; }
+        //    private string password { get; set; }
+        //    void Kraja() {
+        //        login = loginUser;
+        //        password = passwordUser;
+        //        /// Выписка в файл
+        //    }
+        //}
+
+
+        /*
+         Задачка 
+
+            У нас есть класс транспорт
+            У него есть метод побибикать -> Вывод слова БИП!
+            у него есть переменные - кол-во колес, кол-во сидений
+            
+            Есть класс машина, наследуется от транспорта. Побибикай в машине.
+            Метод - спустило колесо
+            
+            Есть класс лайнер, наследуется от транспорта. Есть параметр наименование
+        
+            Выведи, что ЭТОТ(Имя) лайнер не бибикает, а гудит
+         
+         */
     }
 }
